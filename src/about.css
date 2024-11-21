@@ -226,11 +226,6 @@ h1 {
     }
   }
 }
-
-body {
-  position: relative;
-}
-
 .blur-top,
 .blur-bottom {
   position: fixed;
