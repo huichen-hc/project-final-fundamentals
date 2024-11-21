@@ -51,12 +51,13 @@ body {
 
 .header-container {
   display: flex;
+  margin-bottom: 100px;
   align-items: center;
 }
 
 .team-logo {
   max-width: 50%;
-  min-width: 50%;
+  min-width: 25%;
   height: auto;
 }
 
@@ -176,11 +177,56 @@ h1 {
     border-radius: 15px;
   }
 }
-
-body {
-  position: relative;
+@media (min-width: 1024px) {
+  .description-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    flex-direction: row;
+    margin-bottom: 5%;
+    .text {
+      max-width: 50%;
+      margin: 0;
+      padding: 10px;
+      line-height: 2em;
+      font-size: 1vw;
+    }
+    .head-image {
+      max-width: 50%;
+      min-width: 50%;
+      height: auto;
+      border-radius: 15px;
+      object-fit: cover;
+  
+    }
+  }
+  .description-right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 5%;
+    position: relative;
+    flex-direction: row;
+    .text {
+      order: 2;
+      max-width: 50%;
+      margin: 0;
+      padding: 20px;
+      font-size: 1vw;
+      line-height: 2em;
+    }
+  
+    .head-image {
+      min-width: 50%;
+      max-width: 50%;
+      height: auto;
+      object-fit: cover;
+      order: 1;
+      border-radius: 15px;
+    }
+  }
 }
-
 .blur-top,
 .blur-bottom {
   position: fixed;
@@ -199,4 +245,27 @@ body {
 .blur-bottom {
   bottom: 0;
   background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: left;
+  gap: 3%;
+}
+
+nav li {
+  padding: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--font-body);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: var(--color-pink);
+  text-decoration: underline;
 }

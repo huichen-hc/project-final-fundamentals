@@ -192,3 +192,21 @@ img {
     font-size: 3.5rem;
   }
 }
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 1s ease-in-out;
+  animation-delay: 0.7s;
+
+}
