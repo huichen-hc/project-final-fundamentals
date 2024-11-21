@@ -31,18 +31,29 @@ a {
   padding: 2% 19%;
 }
 /* Navigation */
-.nav {
+
+nav ul {
+  list-style-type: none;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #1a1818;
-  padding: 10px 20px;
+  justify-content: left;
+  gap: 3%;
+  margin-left: 3%;
 }
-.nav a {
-  font-size: 12px;
+
+nav li {
+  padding: 1rem;
 }
-.nav span {
-  font-size: 12px;
+
+nav a {
+  text-decoration: none;
+  color: var(--font-body);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: var(--color-pink);
+  text-decoration: underline;
 }
 /* Cards Grid */
 .cards {

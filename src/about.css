@@ -200,3 +200,27 @@ body {
   bottom: 0;
   background: linear-gradient(to top, rgba(255, 255, 255, 0.8), transparent);
 }
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: left;
+  gap: 3%;
+  margin-left: 3%;
+}
+
+nav li {
+  padding: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--font-body);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: var(--color-pink);
+  text-decoration: underline;
+}
