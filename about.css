@@ -51,12 +51,13 @@ body {
 
 .header-container {
   display: flex;
+  margin-bottom: 100px;
   align-items: center;
 }
 
 .team-logo {
   max-width: 50%;
-  min-width: 50%;
+  min-width: 25%;
   height: auto;
 }
 
