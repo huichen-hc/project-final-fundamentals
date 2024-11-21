@@ -1,59 +1,72 @@
-import projectsJson from "./projects.json";
-import { singleProject } from "./singleProject";
+const projects = [
+  {
+    title: "Trattoria da Vinci",
+    tech: "Javascript, HTML, CSS",
+    author: "Hui Chen",
+    gitUrl: "https://github.com/huichen-hc/Restaurant-page",
+    liveUrl: "https://huichen-hc.github.io/Restaurant-page/ ",
+    description:
+      "This project is to create a restaurant page by mainly using JavaScript and Webpack",
+    id: "1",
+  },
+  {
+    title: "Milestone",
+    tech: "Javascript, HTML, CSS",
+    author: "Ji Yoo",
+    gitUrl: "https://github.com/jyy009/restaurant-page/tree/main",
+    liveUrl: "https://jyy009.github.io/restaurant-page/",
+    description:
+      "A cafe homepage design using advanced CSS and HTML for responsiveness.",
+    id: "2",
+  },
+  {
+    title: "Restaurant page",
+    tech: "Javascript, HTML, CSS",
+    author: "Joseph",
+    gitUrl: "https://github.com/huichen-hc/Restaurant-page",
+    liveUrl: "https://huichen-hc.github.io/Restaurant-page/ ",
+    description:
+      "This project is to create a restaurant page by mainly using JavaScript and Webpack",
+    id: "3",
+  },
+  {
+    title: "Restaurant page",
+    tech: "Javascript, HTML, CSS",
+    author: "Yu",
+    gitUrl: "https://github.com/huichen-hc/Restaurant-page",
+    liveUrl: "https://huichen-hc.github.io/Restaurant-page/ ",
+    description:
+      "This project is to create a restaurant page by mainly using JavaScript and Webpack",
+    id: "4",
+  },
+];
 
-export const projects = () => {
-  const projectsSection = document.getElementById("projects-section");
+const projectsContainer = document.getElementById("projects");
 
-  const projectsInfoTemplate = document.getElementById(
-    "projects-info-template"
-  );
-  const cloneProjectsInfoTemplate =
-    projectsInfoTemplate.content.cloneNode(true);
-  projectsSection.appendChild(cloneProjectsInfoTemplate);
+projects.forEach((project) => {
+  const projectElement = document.createElement("div");
+  projectElement.innerHTML = `
+            <p>
+                <a href="#" class="toggle-details">${project.title} by ${project.author}</a>
+            </p>
+            <div class="details">
+                <p>Tech: ${project.tech}</p>
+                <p>Git URL: ${project.gitUrl}</p>
+                <p>Live URL: ${project.liveUrl}</p>
+                <p>Description: ${project.description}</p>
+            </div>
+        `;
+  projectsContainer.appendChild(projectElement);
+});
 
-  const projectsInfoWrapper = document.querySelector(".projects-info-wrapper");
-  const h2 = projectsInfoWrapper.querySelector("h2");
-  h2.style.textTransform = "uppercase";
-
-  const renderProject = () => {
-    const projectsLinkTemplate = document.getElementById(
-      "projects-link-template"
-    );
-
-    projectsJson.forEach((proj) => {
-      const cloneProjectsLinkTemplate =
-        projectsLinkTemplate.content.cloneNode(true);
-
-      const projectLink =
-        cloneProjectsLinkTemplate.querySelector(".projects-link");
-      projectLink.dataset.id = proj.id;
-
-      const projectTitle =
-        cloneProjectsLinkTemplate.querySelector(".projs-title");
-      projectTitle.textContent = proj.title;
-      projectTitle.style.textTransform = "uppercase";
-
-      const projectAuthor =
-        cloneProjectsLinkTemplate.querySelector(".projs-author");
-      projectAuthor.textContent = `- ${proj.author}`;
-      projectAuthor.style.textTransform = "uppercase";
-
-      projectLink.addEventListener("click", (event) => {
-        event.preventDefault();
-
-        const link = event.target.closest(".projects-link");
-        console.log("link from click", link);
-
-        if (link) {
-          const projectId = link.dataset.id;
-          console.log("id from link dataset", projectId);
-          console.log(typeof projectId);
-          singleProject(projectId);
-        }
-      });
-      projectsSection.appendChild(cloneProjectsLinkTemplate);
-    });
-  };
-
-  renderProject();
-};
+document.querySelectorAll(".toggle-details").forEach((link) => {
+  link.addEventListener("click", function (e) {
+    e.preventDefault();
+    const details = this.parentNode.nextElementSibling;
+    if (details.style.display === "block") {
+      details.style.display = "none";
+    } else {
+      details.style.display = "block";
+    }
+  });
+});
