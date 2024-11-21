@@ -64,7 +64,6 @@ nav a:hover {
 }
 
 #projects {
-  min-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
   padding-left: 5px;
@@ -197,4 +196,21 @@ nav a:hover {
   .link-details {
     padding-bottom: 25px;
   }
+}
+
+
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ece7e1;
+  z-index: 1000;
+  transition: transform 1s ease-in-out;
+  transform: translateY(0);
+}
+
+.loaded #loading-screen {
+  transform: translateY(-100%);
 }
