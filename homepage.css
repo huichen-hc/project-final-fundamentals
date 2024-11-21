@@ -193,20 +193,40 @@ img {
   }
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateY(100%);
-    opacity: 0;
-  }
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  z-index: 1000;
+  transition: transform 1s ease-in-out;
+  transform: translateY(0);
+}
 
+.loaded #loading-screen {
+  transform: translateY(100%);
+}
+.hidden {
+  display: none;
+}
+/* Apply blur to all content */
+.blur {
+  filter: blur(10px);
+}
+
+/* Keyframes for unblur effect */
+@keyframes unblur {
+  from {
+    filter: blur(10px);
+  }
   to {
-    transform: translateY(0);
-    opacity: 1;
+    filter: blur(0);
   }
 }
 
-.slide-in {
-  animation: slideIn 1s ease-in-out;
-  animation-delay: 0.7s;
-
+/* Remove blur when the page is loaded */
+.unblur {
+  animation: unblur 0.5s ease-in-out forwards;
 }
