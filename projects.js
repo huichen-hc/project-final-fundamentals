@@ -7,7 +7,6 @@ const projects = [
     liveUrl: "https://huichen-hc.github.io/Restaurant-page/ ",
     description:
       "This project is to create a restaurant page by mainly using JavaScript and Webpack",
-    id: "1",
   },
   {
     title: "Milestone",
@@ -17,27 +16,27 @@ const projects = [
     liveUrl: "https://jyy009.github.io/restaurant-page/",
     description:
       "A cafe homepage design using advanced CSS and HTML for responsiveness.",
-    id: "2",
+
   },
   {
-    title: "Restaurant page",
+    title: "About us",
     tech: "Javascript, HTML, CSS",
     author: "Joseph",
-    gitUrl: "https://github.com/huichen-hc/Restaurant-page",
+    gitUrl: "https://github.com/huichen-hc/project-final-fundamentals",
     liveUrl: "https://huichen-hc.github.io/Restaurant-page/ ",
     description:
       "This project is to create a restaurant page by mainly using JavaScript and Webpack",
-    id: "3",
+
   },
   {
     title: "Restaurant page",
     tech: "Javascript, HTML, CSS",
-    author: "Yu",
-    gitUrl: "https://github.com/huichen-hc/Restaurant-page",
-    liveUrl: "https://huichen-hc.github.io/Restaurant-page/ ",
+    author: "Yu Sun",
+    gitUrl: "https://github.com/yusun-lab/My-home-page",
+    liveUrl: "https://github.com/yusun-lab/My-home-page",
     description:
       "This project is to create a restaurant page by mainly using JavaScript and Webpack",
-    id: "4",
+
   },
 ];
 
@@ -46,15 +45,32 @@ const projectsContainer = document.getElementById("projects");
 projects.forEach((project) => {
   const projectElement = document.createElement("div");
   projectElement.innerHTML = `
-            <p>
-                <a href="#" class="toggle-details">${project.title} by ${project.author}</a>
-            </p>
-            <div class="details">
-                <p>Tech: ${project.tech}</p>
-                <p>Git URL: ${project.gitUrl}</p>
-                <p>Live URL: ${project.liveUrl}</p>
-                <p>Description: ${project.description}</p>
-            </div>
+
+              <div class="link-details">
+                  <a href="#" class="toggle-details">
+                    <p class="toggle-details-title">${project.title}</p>
+                    <p class="toggle-details-author">-${project.author}</p>
+                  </a>
+              </div>
+              <div class="details">
+                  <p>${project.description}</p>
+                  <div>
+                    <p class="tech">Tech</p>
+                    <p class="tech-p">${project.tech}</p>
+                  </div>
+                  <div class="proj-url-wrapper">
+                    <p class="proj-tech-url">URL</p>
+                    <a class="proj-git" href="#" target="_blank" rel="noopener noreferrer"
+                    >Code</a>
+                    <a
+                    class="proj-live"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Live</a>
+                  </div>
+                </div>
+
         `;
   projectsContainer.appendChild(projectElement);
 });

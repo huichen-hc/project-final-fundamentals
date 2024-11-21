@@ -7,7 +7,12 @@
   font-style: normal;
 }
 
-/* Base Styles (Desktop Default) */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 :root {
   --color-background: rgb(233, 227, 221);
   --color-text: rgb(26, 24, 24);
@@ -17,46 +22,137 @@
 }
 
 body {
-  background-color: var(--color-background);
+  background-color: var(--color-text);
   font-family: var(--font-body);
 }
 
-.details {
-  display: none;
-  background-color: #f4f4f4;
-  padding: 10px;
-  margin-top: 5px;
-  border-radius: 5px;
-}
-.toggle-details {
-  text-decoration: none;
-  color: blue;
-  cursor: pointer;
-}
-.toggle-details:hover {
-  text-decoration: underline;
+#page-container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  color: var(--color-background);
 }
 
+nav {
+  padding: 20px;
+}
 nav ul {
   list-style-type: none;
   display: flex;
-  justify-content: left;
-  gap: 3%;
-  margin-left: 3%;
 }
 
 nav li {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 
 nav a {
   text-decoration: none;
   color: var(--font-body);
-  font-family: inherit;
-  font-size: 1rem;
+  font-size: 0.7rem;
 }
 
 nav a:hover {
   color: var(--color-pink);
   text-decoration: underline;
+}
+
+#projects {
+  min-height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  letter-spacing: 1px;
+}
+
+.details {
+  display: none;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+}
+
+.details > p {
+  font-family: var(--font-title);
+  letter-spacing: 1px;
+  padding-bottom: 20px;
+}
+
+.toggle-details {
+  text-decoration: none;
+  color: var(--color-background);
+  cursor: pointer;
+  font-family: var(--font-title);
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+}
+
+.tech,
+.proj-tech-url {
+  text-transform: uppercase;
+  text-decoration: underline;
+  padding-bottom: 5px;
+}
+
+.details div {
+  padding-bottom: 20px;
+}
+
+.toggle-details:hover {
+  text-decoration: underline;
+}
+
+.toggle-details-author {
+  font-size: 1rem;
+}
+
+.proj-url-wrapper a {
+  display: flex;
+  flex-direction: column;
+  color: var(--color-background);
+  text-decoration: none;
+}
+
+@media (min-width: 768px) {
+  nav a {
+    font-size: 1rem;
+  }
+
+  .toggle-details {
+    font-size: 3rem;
+  }
+
+  .toggle-details-author {
+    font-size: 1rem;
+  }
+
+  .details > p {
+    font-size: 1.5rem;
+  }
+
+  .tech,
+  .proj-tech-url {
+    font-size: 1.2rem;
+  }
+
+  .tech-p {
+    font-size: 1.2rem;
+  }
+
+  .proj-url-wrapper a {
+    font-size: 1.2rem;
+  }
+
+  .link-details {
+    padding-bottom: 25px;
+  }
 }
