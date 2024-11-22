@@ -60,11 +60,11 @@ projects.forEach((project) => {
                   </div>
                   <div class="proj-url-wrapper">
                     <p class="proj-tech-url">URL</p>
-                    <a class="proj-git" href="#" target="_blank" rel="noopener noreferrer"
+                    <a class="proj-git" href=${project.gitUrl} target="_blank" rel="noopener noreferrer"
                     >Code</a>
                     <a
                     class="proj-live"
-                    href="#"
+                    href=${project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     >Live</a>
