@@ -22,8 +22,8 @@ const projects = [
     title: "About us",
     tech: "Javascript, HTML, CSS",
     author: "Joseph",
-    gitUrl: "https://github.com/huichen-hc/project-final-fundamentals",
-    liveUrl: "https://huichen-hc.github.io/Restaurant-page/ ",
+    gitUrl: "https://github.com/huichen-hc/project-final-fundamentals/tree/ffupsbranch",
+    liveUrl: "https://huichen-hc.github.io/project-final-fundamentals/about.html ",
     description:
       "This project is to create a restaurant page by mainly using JavaScript and Webpack",
 
@@ -33,7 +33,7 @@ const projects = [
     tech: "Javascript, HTML, CSS",
     author: "Yu Sun",
     gitUrl: "https://github.com/yusun-lab/My-home-page",
-    liveUrl: "https://github.com/yusun-lab/My-home-page",
+    liveUrl: "yusun-lab.github.io/My-home-page",
     description:
       "This project is to create a restaurant page by mainly using JavaScript and Webpack",
 
